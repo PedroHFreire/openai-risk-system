@@ -4,9 +4,11 @@ Welcome to the risk system project! This project aims to develop a tool for iden
 
 To get started with the project, you will need to clone the repository and install the necessary dependencies.
 
+```
 git clone https://github.com/<your_username>/risk-system.git
 cd risk-system
 pip install -r requirements.txt
+```
 
 ## Usage
 
