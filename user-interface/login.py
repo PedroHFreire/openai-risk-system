@@ -46,3 +46,26 @@ def handle_login():
 # Show the window and start the main application loop
 window.show()
 sys.exit(app.exec_())
+
+class LoginWindow(QtWidgets.QWidget):
+    def __init__(self, parent):
+        super().__init__(parent)
+
+        # Create the login form
+        self.username_label = QtWidgets.QLabel('Username:')
+        self.username_field = QtWidgets.QLineEdit()
+        self.password_label = QtWidgets.QLabel('Password:')
+        self.password_field = QtWidgets.QLineEdit()
+        self.submit_button = QtWidgets.QPushButton('Submit')
+
+        # Add the form to a layout
+        layout = QtWidgets.QFormLayout()
+        layout.addRow(self.username_label, self.username_field)
+        layout.addRow(self.password_label, self.password_field)
+        layout.addRow(self.submit_button)
+
+        # Set the layout of the login window
+        self.setLayout(layout)
+
+        # Connect the submit button to the login_successful() method
+        self.submit_button.clicked.connect(self.login_successful)
