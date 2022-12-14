@@ -13,7 +13,7 @@ data = {
 df = pd.DataFrame(data)
 
 # Save the DataFrame to a csv file
-df.to_csv("data.csv")
+df.to_csv("data/data.csv")
 
 # Loop over the stocks in the DataFrame
 for stock in df['Stock']:
@@ -24,4 +24,4 @@ for stock in df['Stock']:
   stock_df = pd.DataFrame(stock_prices)
   
   # Save the dataframe to a csv file
-  stock_df.to_csv(f"{stock}.csv")
+  stock_df.to_csv(f"data/{stock}.csv")

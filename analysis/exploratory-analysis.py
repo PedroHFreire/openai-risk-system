@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from my_functions import get_adj_close
 
 # Read in the DataFrame from the saved data
-df = pd.read_csv("data.csv")
+df = pd.read_csv("data/data.csv")
 
 # Call the get_adj_close() function and pass in the DataFrame
 adj_close_df = get_adj_close(df)
