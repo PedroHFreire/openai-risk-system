@@ -7,7 +7,7 @@ end_date = '2022-12-31'
 
 # Create a DataFrame with the sample data
 data = {
-    'Stock': ['Apple', 'Google', 'Microsoft', 'Amazon'],
+    'Stock': ['AAPL', 'GOOGL', 'MSFT', 'AMZN'],
     'Weight': [0.15, 0.20, 0.25, 0.40]
 }
 df = pd.DataFrame(data)
