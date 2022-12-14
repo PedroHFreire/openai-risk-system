@@ -13,13 +13,14 @@ data = {
 df = pd.DataFrame(data)
 
 # Get the stock prices data for the stocks in the DataFrame
-prices = pdr.get_data_yahoo(df['Stock'], start_date, end_date)
 
-# Print the prices data
-print(prices)
-
-# Set the path for the CSV file
-csv_file_path = 'prices.csv'
-
-# Save the DataFrame to a CSV file
-prices.to_csv(csv_file_path)
+# Loop over the stocks in the DataFrame
+for stock in df['Stock']:
+  # Get the stock prices data for the current stock
+  stock_prices = pdr.get_data_yahoo(stock, start_date, end_date)
+  
+  # Create a new dataframe for the current stock
+  stock_df = pd.DataFrame(stock_prices)
+  
+  # Save the dataframe to a csv file
+  stock_df.to_csv(f"{stock}.csv")
