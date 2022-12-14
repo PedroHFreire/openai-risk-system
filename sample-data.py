@@ -12,7 +12,8 @@ data = {
 }
 df = pd.DataFrame(data)
 
-# Get the stock prices data for the stocks in the DataFrame
+# Save the DataFrame to a csv file
+df.to_csv("data.csv")
 
 # Loop over the stocks in the DataFrame
 for stock in df['Stock']:
