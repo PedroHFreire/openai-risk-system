@@ -67,7 +67,7 @@ class DataInputWindow(QWidget):
 
         # create a button to run the script
         self.run_button = QPushButton("Run script")
-        self.run_button.clicked.connect(self.runScript)
+        self.run_button.clicked.connect(self.runScript) # TODO: Add the script to perform fetch the data and visualize
 
         # create a layout to hold the date range and stock symbol inputs
         layout = QFormLayout()
