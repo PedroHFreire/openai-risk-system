@@ -1,6 +1,6 @@
 import sys
 
-from PyQt5.QtWidgets import QApplication, QDialog, QWidget, QFormLayout, QLineEdit, QPushButton, QMessageBox, QDateEdit
+from PyQt5.QtWidgets import QApplication, QDialog, QWidget, QFormLayout, QLineEdit, QPushButton, QMessageBox, QDateEdit, QListWidget
 from PyQt5.QtCore import pyqtSignal
 
 class LoginWindow(QWidget):
@@ -69,35 +69,25 @@ class DataInputWindow(QWidget):
         self.run_button = QPushButton("Run script")
         self.run_button.clicked.connect(self.runScript) # TODO: Add the script to perform fetch the data and visualize
 
+        # create a list widget to show the user-entered data
+        self.data_list = QListWidget()
+
         # create a layout to hold the date range and stock symbol inputs
         layout = QFormLayout()
         layout.addRow("Start date:", self.start_date_input)
         layout.addRow("End date:", self.end_date_input)
         layout.addRow("Stock symbol:", self.stock_symbol_input)
         layout.addRow("", self.run_button)
+        layout.addRow("Entered data:", self.data_list)
 
         # set the layout of the data input window
         self.setLayout(layout)
     
     def runScript(self):
         # get the user input from the input fields
-        start_date = self.start_date_input.text()
-        end_date = self
+        stock_symbol = self.stock_symbol_input.text() # TODO: Add the script to perform fetch the data and visualize
+        self.data_list.addItem("Stock symbol: " + stock_symbol)
         
-    def closeEvent(self, event):
-        # ask the user if they want to save their changes before closing the window
-        result = QMessageBox.question(self, "Save changes?", "Do you want to save your changes before closing?", QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel)
-
-        if result == QMessageBox.Yes:
-            # save the changes and close the window if the user chooses Yes
-            self.saveChanges()
-            event.accept()
-        elif result == QMessageBox.No:
-            # close the window without saving the changes if the user chooses No
-            event.accept()
-        else:
-            # prevent the window from being closed if the user chooses Cancel
-            event.ignore()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
