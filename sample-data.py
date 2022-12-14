@@ -22,4 +22,4 @@ print(prices)
 csv_file_path = 'prices.csv'
 
 # Save the DataFrame to a CSV file
-df.to_csv(csv_file_path)
+prices.to_csv(csv_file_path)
