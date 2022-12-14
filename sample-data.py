@@ -17,3 +17,9 @@ prices = pdr.get_data_yahoo(df['Stock'], start_date, end_date)
 
 # Print the prices data
 print(prices)
+
+# Set the path for the CSV file
+csv_file_path = 'prices.csv'
+
+# Save the DataFrame to a CSV file
+df.to_csv(csv_file_path)
