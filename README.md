@@ -23,3 +23,6 @@ If you are interested in contributing to the project, please take a look at the 
 ## License
 
 This project is licensed under the MIT License. Please see the [LICENSE](https://github.com/<your_username>/risk-system/blob/master/LICENSE) file for more information.
+
+## OpenAI
+"This project was developed in partnership with [Assistant](https://openai.com/), a large language model trained by OpenAI. Assistant provided valuable insights and guidance throughout the development process, and we are grateful for their contribution to the project."
