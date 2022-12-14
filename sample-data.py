@@ -2,7 +2,7 @@ import pandas as pd
 import pandas_datareader as pdr
 
 # Set the start and end dates for the data
-start_date = '2022-01-01'
+start_date = '2020-01-01'
 end_date = '2022-12-31'
 
 # Create a DataFrame with the sample data
