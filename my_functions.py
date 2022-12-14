@@ -1,3 +1,5 @@
+import pandas as pd
+
 # Define the function
 def get_adj_close(df):
   # Loop over the stocks in the DataFrame
