@@ -52,8 +52,8 @@
           <td>{{ data.purchase_price }}</td>
           <td>{{ data.purchase_date }}</td>
           <td>
-            <a href="{% url 'data_input:edit' data.id %}">Edit</a>
-            <a href="{% url 'data_input:delete' data.id %}">Delete</a>
+            <a href="{% url 'edit' data.id %}">Edit</a>
+            <a href="{% url 'delete' data.id %}">Delete</a>
           </td>
         </tr>
       {% endfor %}

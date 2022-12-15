@@ -70,9 +70,15 @@ def edit_data_view(request, id):
             # Form data is valid
             form.save()
             # Redirect to the data input page
-            return redirect('data_input:data_input')
+            return redirect('data_input')
     else:
         # User has not submitted the data input form
         form = DataInputForm(instance=data)
     # Render the edit data page
     return render(request, 'edit_data.html', {'form': form, 'data': data})
+
+def delete_data_view(request, id): 
+    data = get_object_or_404(StockData, id=id)
+    data.delete() 
+    # Redirect to the data input page
+    return redirect('data_input')
